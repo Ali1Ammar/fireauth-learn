@@ -1,4 +1,5 @@
 import 'package:fireauth/firebase_options.dart';
+import 'package:fireauth/src/helper/nav_helper.dart';
 import 'package:fireauth/src/model/service/auth_service.dart';
 import 'package:fireauth/src/model/service/storage_service.dart';
 import 'package:fireauth/src/view/account.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
+        navigatorKey: NavigatorHelper.navigatorKey,
         theme: ThemeData(
           // This is the theme of your application.
           //
@@ -51,6 +53,10 @@ class MyApp extends StatelessWidget {
           // or simply save your changes to "hot reload" in a Flutter IDE).
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
+          inputDecorationTheme: InputDecorationTheme(
+              isDense: true,
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(360))),
           primarySwatch: Colors.blue,
         ),
         home: const CreateAccountScreen(),
